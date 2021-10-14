@@ -27,7 +27,12 @@ class App extends React.Component {
         </div>
       <div id="hamburgerMenuArea">
         <div id="hamburgerMenu">
-          this is the menu
+          <ul id="menuList">
+            <li className="menuItem">About Us</li>
+            <li className="menuItem">Coffee</li>
+            <li className="menuItem">Tea</li>
+            <li className="menuItem">Contact Us</li>
+          </ul>
         </div>
       </div>
       <h1 id="title">Beans & Leaves</h1>

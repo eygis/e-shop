@@ -43,4 +43,18 @@ body {
   background-color: #efefef;
   width: 22%;
   border: solid black;
+  height: 100%;
+}
+
+#menuList {
+  list-style-type: none;
+}
+
+#menuList:first-child {
+  margin-top: 2em;
+}
+
+.menuItem {
+  margin-bottom: 3em;
+  border-bottom: solid black;
 }
