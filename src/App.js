@@ -36,7 +36,8 @@ class App extends React.Component {
         </div>
       </div>
       <h1 id="title">Beans & Leaves</h1>
-      <span id="subTitle">Your source for local coffee and tea!</span>
+      <span id="subTitle">Your local source for fine coffee and tea!</span>
+      <div id="bar"></div>
       </div>
     </div>
   );
