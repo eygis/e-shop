@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import products from './products.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class App extends React.Component {
     this.state = {}
   }
   hamburgerFunction = () => {
-    document.getElementById("hamburgerMenuArea").style.display="block"
+    document.getElementById("hamburgerMenuArea").style.display = "block"
   }
 
 
@@ -15,7 +16,7 @@ class App extends React.Component {
 
     window.onclick = (event) => {
       if (event.target === document.getElementById("hamburgerMenuArea")) {
-        document.getElementById("hamburgerMenuArea").style.display="none"
+        document.getElementById("hamburgerMenuArea").style.display= "none"
       }
     }
 
@@ -39,6 +40,13 @@ class App extends React.Component {
       <span id="subTitle">Your local source for fine coffee and tea!</span>
       <div id="bar"></div>
       </div>
+      <div id="content">
+      <p className="text">At Beans & Leaves, we strive to bring you the best of locally produced coffee beans and tea leaves.</p>
+      <span>Please take a look at some of our products below!</span>
+      <div id="catalog">
+        {Object.keys(products).map((key) => (<div key={key}>{key}</div>))}
+        </div>
+    </div>
     </div>
   );
   }
