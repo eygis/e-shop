@@ -1,16 +1,26 @@
-let products = {
-    "coffee": {
-        "Ethiopia": {
-            "strength": "dark",
-            "flavor": "chocolate"
-        }
-        },
-    "tea": {
-        "Earl Grey": {
-            "strength": "medium",
-            "flavor": "fruity"
-        } 
+let products = [
+    {
+        "type": "coffee",
+        "name": "ethiopian",
+        "flavor": "chocolate"
+    },
+    {
+        "type": "coffee",
+        "name": "kenya",
+        "flavor": "fruity"
+    },
+    {
+        "type": "tea",
+        "name": "earl grey",
+        "flavor": "fruity"
+    },
+    {
+        "type": "tea",
+        "name": "barley tea",
+        "flavor": "barley"
     }
-}
+]
+    
+
 
 export default products

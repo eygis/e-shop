@@ -44,12 +44,21 @@ class App extends React.Component {
       <p className="text">At Beans & Leaves, we strive to bring you the best of locally produced coffee beans and tea leaves.</p>
       <span>Please take a look at some of our products below!</span>
       <div id="catalog">
-        {Object.keys(products).map((key) => (<div key={key}>{key}</div>))}
+        {products.map((product) => (<div className="product" key={product}>{product.name}</div>))}
         </div>
     </div>
     </div>
   );
   }
 }
+
+/*class Product extends React.Component {
+  render() {
+        return (
+     "s"
+      
+    )
+  }
+}*/
 
 export default App;
