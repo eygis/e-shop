@@ -1,24 +1,46 @@
 let products = [
     {
         "type": "coffee",
-        "name": "ethiopian",
-        "flavor": "chocolate"
+        "name": "ethiopia",
+        "roast": "medium",
+        "taste": ["chocolate", "medium body", "high acidity"]
     },
     {
         "type": "coffee",
         "name": "kenya",
-        "flavor": "fruity"
+        "roast": "medium",
+        "taste": ["citrus", "medium body", "medium acidity"]
+    },
+    {
+        "type": "coffee",
+        "name": "blue mountain",
+        "roast": "medium",
+        "taste": "creamy"
+    },
+    {
+        "type": "coffee",
+        "name": "french",
+        "roast": "dark",
+        "taste": ["smoky"]
     },
     {
         "type": "tea",
         "name": "earl grey",
-        "flavor": "fruity"
+        "type": "black",
+        "taste": ["fruity"]
     },
     {
         "type": "tea",
         "name": "barley tea",
-        "flavor": "barley"
-    }
+        "type": "other",
+        "taste": ["barley"]
+    },
+    {
+        "type": "tea",
+        "name": "matcha",
+        "type": "green",
+        "taste": "bitter"
+    },
 ]
     
 

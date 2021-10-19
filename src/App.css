@@ -78,6 +78,11 @@ body {
   font-size: 1.2em;
 }
 
+#catalog {
+  margin: 10px auto auto auto;
+  width: 60%;
+}
+
 .product {
   order: solid black 1px;
   display: inline-block;
