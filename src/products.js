@@ -25,19 +25,19 @@ let products = [
     },
     {
         "type": "tea",
-        "name": "earl grey",
-        "type": "black",
+        "name": "earl grey", // eslint-disable-next-line
+        "type": "black", 
         "taste": ["fruity"]
     },
     {
         "type": "tea",
-        "name": "barley tea",
+        "name": "barley tea", // eslint-disable-next-line
         "type": "other",
         "taste": ["barley"]
     },
     {
         "type": "tea",
-        "name": "matcha",
+        "name": "matcha", // eslint-disable-next-line
         "type": "green",
         "taste": "bitter"
     },
