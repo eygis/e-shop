@@ -5,12 +5,24 @@ import products from './products.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      type: "test",
+      name: "test",
+      blend: "test",
+      taste: "test"
+    }
   }
   hamburgerFunction = () => {
     document.getElementById("hamburgerMenuArea").style.display = "block"
   }
-
+  displayProduct = (product) => {
+    this.setState({
+      type: product.type,
+      name: product.name,
+      blend: product.blend,
+      taste: product.taste
+    })
+  }
 
   render() {
 
@@ -44,7 +56,15 @@ class App extends React.Component {
       <p className="text">At Beans & Leaves, we strive to bring you the best of locally produced coffee beans and tea leaves.</p>
       <span>Please take a look at some of our products below!</span>
       <div id="catalog">
-        {products.map((product) => (<div className="product" key={product}>{product.name}</div>))}
+        {products.map((product) => (<div className="product" key={product} onClick={()=>this.displayProduct(product)}>{product.name}</div>))}
+        </div>
+        <div id="display">
+          <h1>{this.state.name}</h1>
+        <ul>
+          <li>Type: {this.state.type}</li>
+          <li>Blend: {this.state.blend}</li>
+          <li>Taste: {this.state.taste}</li>
+        </ul>
         </div>
     </div>
     </div>

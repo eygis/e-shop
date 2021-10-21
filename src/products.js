@@ -2,43 +2,43 @@ let products = [
     {
         "type": "coffee",
         "name": "ethiopia",
-        "roast": "medium",
-        "taste": ["chocolate", "medium body", "high acidity"]
+        "blend": "medium",
+        "taste": ["chocolate, ", "medium body, ", "high acidity"]
     },
     {
         "type": "coffee",
         "name": "kenya",
-        "roast": "medium",
-        "taste": ["citrus", "medium body", "medium acidity"]
+        "blend": "medium",
+        "taste": ["citrus, ", "medium body, ", "medium acidity"]
     },
     {
         "type": "coffee",
         "name": "blue mountain",
-        "roast": "medium",
+        "blend": "medium",
         "taste": "creamy"
     },
     {
         "type": "coffee",
         "name": "french",
-        "roast": "dark",
+        "blend": "dark",
         "taste": ["smoky"]
     },
     {
         "type": "tea",
-        "name": "earl grey", // eslint-disable-next-line
-        "type": "black", 
+        "name": "earl grey", 
+        "blend": "black", 
         "taste": ["fruity"]
     },
     {
         "type": "tea",
-        "name": "barley tea", // eslint-disable-next-line
-        "type": "other",
+        "name": "barley tea", 
+        "blend": "other",
         "taste": ["barley"]
     },
     {
         "type": "tea",
-        "name": "matcha", // eslint-disable-next-line
-        "type": "green",
+        "name": "matcha",
+        "blend": "green",
         "taste": "bitter"
     },
 ]
