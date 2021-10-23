@@ -84,7 +84,6 @@ body {
 }
 
 .product {
-  order: solid black 1px;
   display: inline-block;
   margin: 5px;
   padding: 10px;
@@ -105,4 +104,19 @@ body {
 #display ul {
   list-style-type: none;
   text-align: left;
+}
+
+#cart {
+  margin-top: 5px;
+  margin-right: 5px;
+  display: flex;
+  float: right;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 5px;
+}
+
+#cartIcon {
+  font-size: 2em;
 }

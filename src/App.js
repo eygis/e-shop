@@ -6,10 +6,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: "test",
-      name: "test",
-      blend: "test",
-      taste: "test"
+      type: "",
+      name: "",
+      blend: "",
+      taste: "",
+      cart: []
     }
   }
   hamburgerFunction = () => {
@@ -23,6 +24,15 @@ class App extends React.Component {
       taste: product.taste
     })
   }
+  addToCart = (product) => {
+    if (product === "") {
+      return
+    } else {
+    this.setState({
+      cart: [...this.state.cart, product.name]
+    })
+  }
+  }
 
   render() {
 
@@ -31,6 +41,12 @@ class App extends React.Component {
         document.getElementById("hamburgerMenuArea").style.display= "none"
       }
     }
+
+    let unfiltered = this.state.cart.map(item => 
+      item + " (" + this.state.cart.reduce((count, current) => (current === item ? count + 1 : count), 0) + ") "
+       );
+
+    let filtered = [...new Set(unfiltered)]
 
   return (
     <div className="wrapper">
@@ -50,13 +66,17 @@ class App extends React.Component {
       </div>
       <h1 id="title">Beans & Leaves</h1>
       <span id="subTitle">Your local source for fine coffee and tea!</span>
+      <div id="cart">
+        Your Cart ({this.state.cart.length}) 
+        <i id="cartIcon" className="fa fa-shopping-cart"></i>
+      </div>
       <div id="bar"></div>
       </div>
       <div id="content">
       <p className="text">At Beans & Leaves, we strive to bring you the best of locally produced coffee beans and tea leaves.</p>
       <span>Please take a look at some of our products below!</span>
       <div id="catalog">
-        {products.map((product) => (<div className="product" key={product} onClick={()=>this.displayProduct(product)}>{product.name}</div>))}
+        {products.map((product) => (<div className="product" key={product.name} onClick={()=>this.displayProduct(product)}>{product.name}</div>))}
         </div>
         <div id="display">
           <h1>{this.state.name}</h1>
@@ -65,7 +85,10 @@ class App extends React.Component {
           <li>Blend: {this.state.blend}</li>
           <li>Taste: {this.state.taste}</li>
         </ul>
+        <button id="addToCart" onClick={() => this.addToCart(this.state)}>Add To Cart</button>
         </div>
+        {filtered}
+        {console.log(filtered)}
     </div>
     </div>
   );
