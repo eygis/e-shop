@@ -23,9 +23,10 @@ class App extends React.Component {
       blend: product.blend,
       taste: product.taste
     })
+    document.getElementById("displayMenuArea").style.display = "block"
   }
   addToCart = (product) => {
-    if (product === "") {
+    if (product.name === "") {
       return
     } else {
     this.setState({
@@ -33,12 +34,21 @@ class App extends React.Component {
     })
   }
   }
+  cartFunction = () => {
+    document.getElementById("cartMenuArea").style.display = "block"
+  }
 
   render() {
 
     window.onclick = (event) => {
       if (event.target === document.getElementById("hamburgerMenuArea")) {
         document.getElementById("hamburgerMenuArea").style.display= "none"
+      }
+      if (event.target === document.getElementById("displayMenuArea")) {
+        document.getElementById("displayMenuArea").style.display= "none"
+      }
+      if (event.target === document.getElementById("cartMenuArea")) {
+        document.getElementById("cartMenuArea").style.display= "none"
       }
     }
 
@@ -54,7 +64,7 @@ class App extends React.Component {
       <div id="hamburgerDiv">
         <i id="hamburger" className="fa fa-bars" onClick={this.hamburgerFunction}></i>
         </div>
-      <div id="hamburgerMenuArea">
+      <div className="menuArea" id="hamburgerMenuArea">
         <div id="hamburgerMenu">
           <ul id="menuList">
             <li className="menuItem">About Us</li>
@@ -66,11 +76,18 @@ class App extends React.Component {
       </div>
       <h1 id="title">Beans & Leaves</h1>
       <span id="subTitle">Your local source for fine coffee and tea!</span>
-      <div id="cart">
+      <div id="cart" onClick={() =>this.cartFunction()}>
         Your Cart ({this.state.cart.length}) 
         <i id="cartIcon" className="fa fa-shopping-cart"></i>
       </div>
       <div id="bar"></div>
+      <div className="menuArea" id="cartMenuArea">
+        <div id="cartMenu">
+          {filtered.flatMap(product => {
+            return <div className="cartProduct">{product}</div>
+          })}
+        </div>
+      </div>
       </div>
       <div id="content">
       <p className="text">At Beans & Leaves, we strive to bring you the best of locally produced coffee beans and tea leaves.</p>
@@ -78,6 +95,7 @@ class App extends React.Component {
       <div id="catalog">
         {products.map((product) => (<div className="product" key={product.name} onClick={()=>this.displayProduct(product)}>{product.name}</div>))}
         </div>
+        <div className="menuArea" id="displayMenuArea">
         <div id="display">
           <h1>{this.state.name}</h1>
         <ul>
@@ -87,8 +105,9 @@ class App extends React.Component {
         </ul>
         <button id="addToCart" onClick={() => this.addToCart(this.state)}>Add To Cart</button>
         </div>
-        {filtered}
-        {console.log(filtered)}
+        </div>
+        {/*filtered*/}
+        {/*console.log(filtered)*/}
     </div>
     </div>
   );
