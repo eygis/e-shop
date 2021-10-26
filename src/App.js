@@ -84,8 +84,9 @@ class App extends React.Component {
       <div className="menuArea" id="cartMenuArea">
         <div id="cartMenu">
           {filtered.flatMap(product => {
-            return <div className="cartProduct">{product}</div>
+            return <div className="cartProduct">{product}<button id="delete">X</button></div>
           })}
+          <button id="checkOut" onClick={()=>alert("You would now be directed to the check out page.")}>Check Out</button>
         </div>
       </div>
       </div>
