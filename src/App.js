@@ -39,10 +39,22 @@ class App extends React.Component {
   }
 
   deleteProduct = (arr, index) => {
-    /*arr.splice(index, 1)
-    console.log(arr[0])
-   this.setState({
-     cart: arr
+    arr.splice(index, 1)
+    let value = arr.map(element => element.split(" ").splice(-1));
+    let refresh = arr.map(element => element.split(" ").slice(0, -1).join(" "));
+    //console.log(refresh)
+    console.log(value)
+    let newCart = []
+    //console.log(value[0][0][1])
+    refresh.forEach(element => {
+      for (let i = 0; i < value[0][0][1]; i++) {
+        //console.log(value[i])
+        newCart.push(element)
+    }
+  })
+  console.log(newCart)
+   /*this.setState({
+     cart: newCart
    })*/
   }
 
