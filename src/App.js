@@ -38,7 +38,7 @@ class App extends React.Component {
     document.getElementById("cartMenuArea").style.display = "block"
   }
 
-  deleteProduct = (arr, index, product) => {
+  deleteProduct = (arr, index) => {
     /*arr.splice(index, 1)
     console.log(arr[0])
    this.setState({
