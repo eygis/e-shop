@@ -38,6 +38,14 @@ class App extends React.Component {
     document.getElementById("cartMenuArea").style.display = "block"
   }
 
+  deleteProduct = (arr, index, product) => {
+    /*arr.splice(index, 1)
+    console.log(arr[0])
+   this.setState({
+     cart: arr
+   })*/
+  }
+
   render() {
 
     window.onclick = (event) => {
@@ -53,7 +61,7 @@ class App extends React.Component {
     }
 
     let unfiltered = this.state.cart.map(item => 
-      item + " (" + this.state.cart.reduce((count, current) => (current === item ? count + 1 : count), 0) + ") "
+      item + " (" + this.state.cart.reduce((count, current) => (current === item ? count + 1 : count), 0) + ")"
        );
 
     let filtered = [...new Set(unfiltered)]
@@ -83,8 +91,8 @@ class App extends React.Component {
       <div id="bar"></div>
       <div className="menuArea" id="cartMenuArea">
         <div id="cartMenu">
-          {filtered.flatMap(product => {
-            return <div className="cartProduct">{product}<button id="delete">X</button></div>
+          {filtered.flatMap((product, index) => {
+            return <div className="cartProduct">{product}<button id="delete" onClick={()=>this.deleteProduct(filtered, index)}>X</button></div>
           })}
           <button id="checkOut" onClick={()=>alert("You would now be directed to the check out page.")}>Check Out</button>
         </div>
