@@ -74,6 +74,14 @@ class App extends React.Component {
 
     let filtered = [...new Set(unfiltered)]
 
+    let totalFunction = () => {
+      if (this.state.cart.length === 0) {
+        return "Please add a product to your cart!"
+      } else {
+      return "Total: $" + ((this.state.cart.length) * 9.99).toFixed(2)
+      }
+    }
+
   return (
     <div className="wrapper">
       <div id="header">
@@ -102,6 +110,7 @@ class App extends React.Component {
           {filtered.flatMap((product, index) => {
             return <div className="cartProduct">{product}<button id="delete" onClick={()=>this.deleteProduct(filtered, index)}>X</button></div>
           })}
+          <div id="total" className="cartProduct">{totalFunction()}</div>
           <button id="checkOut" onClick={()=>alert("You would now be directed to the check out page.")}>Check Out</button>
         </div>
       </div>
@@ -115,6 +124,7 @@ class App extends React.Component {
         <div className="menuArea" id="displayMenuArea">
         <div id="display">
           <h1>{this.state.name}</h1>
+          <h3>$9.99</h3>
         <ul>
           <li>Type: {this.state.type}</li>
           <li>Blend: {this.state.blend}</li>

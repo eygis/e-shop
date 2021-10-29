@@ -15,7 +15,7 @@ let products = [
         "type": "coffee",
         "name": "blue mountain",
         "blend": "medium",
-        "taste": "creamy"
+        "taste": ["creamy"]
     },
     {
         "type": "coffee",
@@ -39,7 +39,7 @@ let products = [
         "type": "tea",
         "name": "matcha",
         "blend": "green",
-        "taste": "bitter"
+        "taste": ["bitter"]
     },
 ]
     
