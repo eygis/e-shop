@@ -126,9 +126,9 @@ class App extends React.Component {
           <h1>{this.state.name}</h1>
           <h3>$9.99</h3>
         <ul>
-          <li>Type: {this.state.type}</li>
-          <li>Blend: {this.state.blend}</li>
-          <li>Taste: {this.state.taste}</li>
+          <li><span className="underline">Type: </span>{this.state.type}</li>
+          <li><span className="underline">Blend: </span> {this.state.blend}</li>
+          <li><span className="underline">Taste: </span> {this.state.taste}</li>
         </ul>
         <button id="addToCart" onClick={() => this.addToCart(this.state)}>Add To Cart</button>
         </div>

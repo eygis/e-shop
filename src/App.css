@@ -228,3 +228,8 @@ body {
 h3 {
   display: inline;
 }
+
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+}
