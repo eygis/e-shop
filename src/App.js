@@ -91,10 +91,10 @@ class App extends React.Component {
       <div className="menuArea" id="hamburgerMenuArea">
         <div id="hamburgerMenu">
           <ul id="menuList">
-            <li className="menuItem">About Us</li>
-            <li className="menuItem">Coffee</li>
-            <li className="menuItem">Tea</li>
-            <li className="menuItem">Contact Us</li>
+            <li className="menuItem" onClick={()=>alert("You would now be directed to the About Us page.")}>About Us</li>
+            <li className="menuItem" onClick={()=>alert("You would now be directed to the Coffee Information page.")}>Coffee</li>
+            <li className="menuItem" onClick={()=>alert("You would now be directed to the Tea Information page.")}>Tea</li>
+            <li className="menuItem" onClick={()=>alert("You would now be directed to the Contact page.")}>Contact Us</li>
           </ul>
         </div>
       </div>
