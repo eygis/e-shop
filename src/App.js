@@ -48,7 +48,6 @@ class App extends React.Component {
         newCart.push(element);
       }
   })
-  //console.log(newCart)
    this.setState({
      cart: newCart
    })
@@ -133,21 +132,10 @@ class App extends React.Component {
         <button id="addToCart" onClick={() => this.addToCart(this.state)}>Add To Cart</button>
         </div>
         </div>
-        {/*filtered*/}
-        {/*console.log(filtered)*/}
     </div>
     </div>
   );
   }
 }
-
-/*class Product extends React.Component {
-  render() {
-        return (
-     "s"
-      
-    )
-  }
-}*/
 
 export default App;
